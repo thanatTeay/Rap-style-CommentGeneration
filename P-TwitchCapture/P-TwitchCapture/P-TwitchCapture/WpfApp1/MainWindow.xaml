@@ -1,0 +1,80 @@
+﻿<Window x:Class="PTwitchCapture.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SoundCapture"
+        mc:Ignorable="d"
+        Title="TwitchCapture" Height="307.132" Width="509.728" Icon="iconP.png">
+    <Grid>
+        <TabControl RenderTransformOrigin="0.5,0.5">
+            <TabControl.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TabControl.RenderTransform>
+            <TabItem Header="Main">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="txtLog" Margin="10,43,256,10" TextWrapping="Wrap" AcceptsReturn="True"
+                             AcceptsTab="True" Text="" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Uid="txtLog"/>
+                    <ProgressBar x:Name="progress_P2" HorizontalAlignment="Right" Margin="0,72,67,10" Width="28" Orientation="Vertical" Foreground="#FFD1D1D1"  Background="White" Minimum="-100" SmallChange="1"/>
+                    <Label Content="- WEAK" HorizontalAlignment="Right" Margin="0,0,10,3" Width="53" Height="25" VerticalAlignment="Bottom"/>
+                    <Label Content="- STRONG" HorizontalAlignment="Right" Margin="0,59,0,0" Width="64" Height="30" VerticalAlignment="Top"/>
+                    <Label Content="- Normal" HorizontalAlignment="Right" Margin="0,128,0,64" Width="62" VerticalAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" Height="56"/>
+                    <Button x:Name="butReset" Content="Reset" HorizontalAlignment="Left" Height="25" Margin="96,11,0,0" VerticalAlignment="Top" Width="59" FontSize="16" FontWeight="Bold" Click="butTune_Click" Background="White"/>
+                    <ProgressBar x:Name="progress_P1" HorizontalAlignment="Right" Margin="0,72,99,10" Width="28" Orientation="Vertical" Foreground="#FFD1D1D1"  Background="White" Minimum="-100" SmallChange="1"/>
+                    <Label Content="P2" HorizontalAlignment="Left" Margin="230,2,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="#FF006BD6"/>
+                    <Label Content="P1" Margin="0,1,6,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" HorizontalAlignment="Right" Width="29" Foreground="#FF006BD6"/>
+                    <Slider x:Name="slide_Bal" Margin="264,6,35,0" VerticalAlignment="Top" Maximum="100" Minimum="-100" Background="#FF006BD6" TickPlacement="BottomRight" SmallChange="1" TickFrequency="100"/>
+                    <TextBox x:Name="txtVar" Margin="0,42,137,10" TextWrapping="Wrap" AcceptsReturn="True"
+                        AcceptsTab="True" Text="" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Uid="txtLog" HorizontalAlignment="Right" Width="114" Background="Black" Foreground="Cyan"/>
+                    <Label x:Name="txtP1" Content="P1" HorizontalAlignment="Right" Margin="0,39,98,166" FontSize="16" FontWeight="Bold" Foreground="Black"/>
+                    <Label x:Name="txtP2" Content="P2" HorizontalAlignment="Right" Margin="0,39,64,166" FontSize="16" FontWeight="Bold" Foreground="Black"/>
+                    <CheckBox x:Name="checkPause" Content="Pause" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="11,13,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Checked="checkPause_Checked" Unchecked="checkPause_Checked"/>
+
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Data" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
+
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,0">
+                    <CheckBox x:Name="checkData_on" Content="Collecting Data" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="11,44,0,0" VerticalAlignment="Top" FontSize="16" Unchecked="checkData_on_Checked" Checked="checkData_on_Checked"/>
+                    <TextBox x:Name="txtLog_Data" Margin="10,74,10,64" TextWrapping="Wrap" AcceptsReturn="True"
+                        AcceptsTab="True" Text="" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Uid="txtLog"/>
+                    <Button x:Name="butData_reset" Content="Reset" HorizontalAlignment="Right" Height="25" Margin="0,41,10,0" VerticalAlignment="Top" Width="59" FontSize="16" FontWeight="Bold" Background="White" Click="butData_reset_Click"/>
+                    <Button x:Name="butData_export" Content="Export" HorizontalAlignment="Right" Height="25" Margin="0,41,226,0" VerticalAlignment="Top" Width="59" FontSize="16" FontWeight="Bold" Background="White" Click="butData_export_Click"/>
+                    <Button x:Name="butData_open" Content="Open Folder" HorizontalAlignment="Right" Height="25" Margin="0,41,106,0" VerticalAlignment="Top" Width="105" FontSize="16" FontWeight="Bold" Background="White" Click="butData_open_Click"/>
+                    <Button x:Name="butData_stop" Content="Stop" HorizontalAlignment="Right" Height="25" Margin="0,10,226,0" VerticalAlignment="Top" Width="59" FontSize="16" FontWeight="Bold" Background="White" Click="butData_stop_Click"/>
+                    <CheckBox x:Name="checkData_autoStart" Content="Auto Start by Message" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top" FontSize="16" Unchecked="checkData_autoStart_Checked" Checked="checkData_autoStart_Checked" IsChecked="True"/>
+                </Grid>
+            </TabItem>
+
+
+            <TabItem Header="Settings">
+                <Grid Background="#FFE5E5E5" Margin="0,0,-2,-4">
+
+                    <Label Content="Folder:" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtFile" HorizontalAlignment="Left" Height="23" Margin="59,50,0,0" TextWrapping="Wrap" Text="D:/FTGexp/F" VerticalAlignment="Top" Width="105" Uid="txtFile" TextChanged="txtFile_TextChanged"/>
+                    <Button x:Name="butApply" Content="Apply Settings" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="122" RenderTransformOrigin="0.373,0.8" Height="32" Click="ButApply_Click" FontWeight="Bold" FontSize="16"/>
+
+                    <CheckBox x:Name="checkFTG" Content="P.txt" HorizontalAlignment="Left" Margin="57,81,0,0" VerticalAlignment="Top" Uid="ftg_check" IsChecked="True" Checked="checkFTG_Checked"/>
+                    <CheckBox x:Name="checkFTG2" Content="N.txt" HorizontalAlignment="Left" Margin="119,81,0,0" VerticalAlignment="Top" Uid="ftg_check" IsChecked="True"/>
+                    <CheckBox x:Name="checkSentiment" Content="SentimentAnalysis" HorizontalAlignment="Left" Margin="59,196,0,0" VerticalAlignment="Top" Uid="ftg_check"/>
+                    <CheckBox x:Name="checkV2" Content="ver2: sliding window" HorizontalAlignment="Left" Margin="59,176,0,0" VerticalAlignment="Top" Uid="ftg_check" IsChecked="True"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Tester" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="sent_input" HorizontalAlignment="Left" Height="23" Margin="49,31,0,0" TextWrapping="Wrap" Text="Hello" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="sent_but" Content="Sentiment" HorizontalAlignment="Left" Margin="174,34,0,0" VerticalAlignment="Top" Width="75" Click="sent_but_Click"/>
+                    <TextBox x:Name="sent_output" Margin="49,60,247,84" TextWrapping="Wrap" AcceptsReturn="True"
+                        AcceptsTab="True" Text="" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Uid="txtLog"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

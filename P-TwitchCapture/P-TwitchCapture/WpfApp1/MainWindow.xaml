@@ -1,0 +1,105 @@
+﻿<Window x:Class="PTwitchCapture.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SoundCapture"
+        mc:Ignorable="d"
+        Title="TwitchCapture" Height="347.674" Width="524.087" Icon="iconP.png">
+    <Grid>
+        <TabControl RenderTransformOrigin="0.5,0.5">
+            <TabControl.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TabControl.RenderTransform>
+            <TabItem Header="Main">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="txtLog" Margin="10,62,256,10" TextWrapping="Wrap" AcceptsReturn="True"
+                             AcceptsTab="True" Text="" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Uid="txtLog" TextChanged="txtLog_TextChanged"/>
+                    <ProgressBar x:Name="progress_P2" HorizontalAlignment="Right" Margin="0,72,67,10" Width="28" Orientation="Vertical" Foreground="#FFD1D1D1"  Background="White" Minimum="-100" SmallChange="1"/>
+                    <Label Content="- WEAK" HorizontalAlignment="Right" Margin="0,0,10,3" Width="53" Height="25" VerticalAlignment="Bottom"/>
+                    <Label Content="- STRONG" HorizontalAlignment="Right" Margin="0,59,0,0" Width="64" Height="30" VerticalAlignment="Top"/>
+                    <Label Content="- Normal" HorizontalAlignment="Right" Margin="0,128,0,64" Width="62" VerticalAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" Height="56"/>
+                    <Button x:Name="butReset" Content="Reset" HorizontalAlignment="Left" Height="25" Margin="169,32,0,0" VerticalAlignment="Top" Width="53" FontSize="16" FontWeight="Bold" Click="butTune_Click" Background="White"/>
+                    <ProgressBar x:Name="progress_P1" HorizontalAlignment="Right" Margin="0,72,99,10" Width="28" Orientation="Vertical" Foreground="#FFD1D1D1"  Background="White" Minimum="-100" SmallChange="1"/>
+                    <Label Content="P2" HorizontalAlignment="Left" Margin="230,2,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="#FF006BD6"/>
+                    <Label Content="P1" Margin="0,1,6,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" HorizontalAlignment="Right" Width="29" Foreground="#FF006BD6"/>
+                    <Slider x:Name="slide_Bal" Margin="264,6,35,0" VerticalAlignment="Top" Maximum="100" Minimum="-100" Background="#FF006BD6" TickPlacement="BottomRight" SmallChange="1" TickFrequency="100"/>
+                    <TextBox x:Name="txtVar" Margin="0,42,137,10" TextWrapping="Wrap" AcceptsReturn="True"
+                        AcceptsTab="True" Text="" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Uid="txtLog" HorizontalAlignment="Right" Width="114" Background="Black" Foreground="Cyan"/>
+                    <Label x:Name="txtP1" Content="P1" HorizontalAlignment="Right" Margin="0,39,98,166" FontSize="16" FontWeight="Bold" Foreground="Black"/>
+                    <Label x:Name="txtP2" Content="P2" HorizontalAlignment="Right" Margin="0,39,64,166" FontSize="16" FontWeight="Bold" Foreground="Black"/>
+                    <CheckBox x:Name="checkPause" Content="Pause" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Checked="checkPause_Checked" Unchecked="checkPause_Checked"/>
+                    <CheckBox x:Name="checkAutoReset" Content="Reset on Round" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" IsChecked="True"/>
+                    <CheckBox x:Name="checkOneside" Content="One-side Mode" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="87,10,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Checked="checkOneSide_Checked" Unchecked="checkOneSide_Checked" IsChecked="True"/>
+
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Data" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
+
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,0">
+                    <CheckBox x:Name="checkData_on" Content="Collecting Data" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="11,44,0,0" VerticalAlignment="Top" FontSize="16" Unchecked="checkData_on_Checked" Checked="checkData_on_Checked"/>
+                    <TextBox x:Name="txtLog_Data" Margin="10,74,10,10" TextWrapping="Wrap" AcceptsReturn="True"
+                        AcceptsTab="True" Text="" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Uid="txtLog"/>
+                    <Button x:Name="butData_reset" Content="Reset" HorizontalAlignment="Right" Height="25" Margin="0,41,10,0" VerticalAlignment="Top" Width="59" FontSize="16" FontWeight="Bold" Background="White" Click="butData_reset_Click"/>
+                    <Button x:Name="butData_export" Content="Export" HorizontalAlignment="Right" Height="25" Margin="0,41,226,0" VerticalAlignment="Top" Width="59" FontSize="16" FontWeight="Bold" Background="White" Click="butData_export_Click"/>
+                    <Button x:Name="butData_open" Content="Open Folder" HorizontalAlignment="Right" Height="25" Margin="0,41,106,0" VerticalAlignment="Top" Width="105" FontSize="16" FontWeight="Bold" Background="White" Click="butData_open_Click"/>
+                    <Button x:Name="butData_stop" Content="Stop" HorizontalAlignment="Right" Height="25" Margin="0,10,226,0" VerticalAlignment="Top" Width="59" FontSize="16" FontWeight="Bold" Background="White" Click="butData_stop_Click"/>
+                    <CheckBox x:Name="checkData_autoStart" Content="Auto Start by Message" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top" FontSize="16" Unchecked="checkData_autoStart_Checked" Checked="checkData_autoStart_Checked" IsChecked="True"/>
+                </Grid>
+            </TabItem>
+
+
+            <TabItem Header="Settings" Height="22" VerticalAlignment="Top">
+                <Grid Background="#FFE5E5E5" Margin="0,0,-2,-4">
+
+                    <CheckBox x:Name="checkSentiment" Content="SentimentAnalysis" HorizontalAlignment="Left" Margin="10,87,0,0" VerticalAlignment="Top" Uid="ftg_check"/>
+                    <CheckBox x:Name="checkV2" Content="Code Ver2: sliding window method" HorizontalAlignment="Left" Margin="10,67,0,0" VerticalAlignment="Top" Uid="ftg_check" IsChecked="True"/>
+                    <Button x:Name="butApply" Content="Apply Settings" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="122" RenderTransformOrigin="0.373,0.8" Height="32" Click="ButApply_Click" FontWeight="Bold" FontSize="16"/>
+
+
+                    <GroupBox Header="Read-Write files" HorizontalAlignment="Left" Height="126" Margin="234,0,0,0" VerticalAlignment="Top" Width="268">
+                        <Grid>
+
+                            <CheckBox x:Name="checkFTG_HP" Content="HP1.txt , HP2.txt (HP Data)" HorizontalAlignment="Left" Margin="68,77,0,0" VerticalAlignment="Top" Uid="ftg_check" IsChecked="True"/>
+                            <Label Content="Folder:" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top"/>
+                            <TextBox x:Name="txtFile" HorizontalAlignment="Left" Height="23" Margin="59,10,0,0" TextWrapping="Wrap" Text="D:/FTGexp/F" VerticalAlignment="Top" Width="105" Uid="txtFile"/>
+                            <CheckBox x:Name="checkFTG" Content="P.txt (P1's Strength)" HorizontalAlignment="Left" Margin="68,38,0,0" VerticalAlignment="Top" Uid="ftg_check" IsChecked="True"/>
+                            <CheckBox x:Name="checkFTG2" Content="N.txt (P2's Strength)" HorizontalAlignment="Left" Margin="68,57,0,0" VerticalAlignment="Top" Uid="ftg_check" IsChecked="True"/>
+
+
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="One-side Mode (Ver 2 only)" HorizontalAlignment="Left" Height="152" Margin="234,131,0,0" VerticalAlignment="Top" Width="268">
+                        <Grid>
+                            <TextBox x:Name="txt_oneSide_numParticipant" HorizontalAlignment="Left" Height="23" Margin="170,0,0,40" TextWrapping="Wrap" Text="10" VerticalAlignment="Bottom" Width="59" TextAlignment="Center" RenderTransformOrigin="0.5,0.5" Background="#FFC4E5F7">
+                            </TextBox>
+                            <Label Content="Number of participant" Margin="6,0,91,37" Height="26" VerticalAlignment="Bottom"/>
+                            <Label x:Name="txt_oneSide_label1" Content="Rate: create 1 msg every" Margin="6,0,104,99" Height="26" VerticalAlignment="Bottom"/>
+                            <TextBox x:Name="txt_oneSide_rate" HorizontalAlignment="Left" Height="23" Margin="157,0,0,102" TextWrapping="Wrap" Text="2000" VerticalAlignment="Bottom" Width="59" TextAlignment="Center" RenderTransformOrigin="0.5,0.5"/>
+                            <Label x:Name="txt_oneSide_label1_Copy" Content="ms" Margin="221,0,10,99" Height="26" VerticalAlignment="Bottom"/>
+                            <Button x:Name="but_oneSide_cal" Content="Calculate Rate" HorizontalAlignment="Left" Margin="53,35,0,0" VerticalAlignment="Top" Width="146" Background="#FF5FABD6" FontWeight="Bold" Click="but_oneSide_cal_Click"/>
+                            <TextBox x:Name="txt_oneSide_avg" HorizontalAlignment="Left" Height="23" Margin="170,0,0,9" TextWrapping="Wrap" Text="3" VerticalAlignment="Bottom" Width="59" TextAlignment="Center" RenderTransformOrigin="0.5,0.5" Background="#FFC4E5F7"/>
+                            <Label Content="Average msg/min/person" Margin="6,0,91,6" Height="26" VerticalAlignment="Bottom"/>
+
+                        </Grid>
+                    </GroupBox>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Tester" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="sent_input" HorizontalAlignment="Left" Height="23" Margin="49,31,0,0" TextWrapping="Wrap" Text="Hello" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="sent_but" Content="Sentiment" HorizontalAlignment="Left" Margin="174,34,0,0" VerticalAlignment="Top" Width="75" Click="sent_but_Click"/>
+                    <TextBox x:Name="sent_output" Margin="49,60,247,84" TextWrapping="Wrap" AcceptsReturn="True"
+                        AcceptsTab="True" Text="" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Uid="txtLog"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
