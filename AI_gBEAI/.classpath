@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="AI_gBEAI.jar"/>
+	<classpathentry kind="lib" path="AIToolKit.jar"/>
+	<classpathentry kind="lib" path="gBEAI.jar"/>
+	<classpathentry kind="lib" path="lib/AIToolkit.jar"/>
+	<classpathentry kind="lib" path="Use this gBEAI _jar/gBEAI.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
