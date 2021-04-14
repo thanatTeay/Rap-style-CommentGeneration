@@ -30,11 +30,11 @@ namespace WindowsFormsApp1
         public int typeRhythm = 0;
         public bool checkBGM,p1Strong,p2Strong;
         public int setTime = -999;
-        public double beat = 900;
+        public double beat = 750;
         public double P1Value = 1, P2Value = 0;
         public int setTimeP = 2000;
-        string path1 = @"C:\Users\maili\Desktop\texttospeechAPG\textfile\";
-        string path2 = @"D:\FTGexp\F\";
+        string path1 = @"C:\Users\maili\Desktop\texttospeechAPG\textfile\"; //real comment script
+        string path2 = @"D:\FTGexp\F\"; //All state feom FightingICE
         public Form1()
         {
             InitializeComponent();
@@ -323,9 +323,17 @@ namespace WindowsFormsApp1
         {
             if (setTime >= (beat * 1)) //1.0
             {
+                Speech.rateSpeed = 1;
+            }
+            else if (setTime >= (beat * 0.75)) //0.75
+            {
                 Speech.rateSpeed = 2;
             }
             else if (setTime >= (beat * 0.5)) //0.50
+            {
+                Speech.rateSpeed = 3;
+            }
+            else if (setTime >= (beat * 0.33)) //0.33
             {
                 Speech.rateSpeed = 4;
             }
@@ -335,7 +343,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                Speech.rateSpeed = 7;
+                Speech.rateSpeed = 6;
             }
             checkWord();
         }
