@@ -34,8 +34,8 @@ Experimental results show that the proposed system promotes audience experience.
 <!-- Software tools -->
 ## Software tools
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-*Visual studio
-*Eclipse
+* Visual studio
+* Eclipse
 
 ### AI_gBEAI
 FightingICE is the game in use for streaming. To use it as an APG, two gBEAIs are used; they receive **F**s from the previous component. A Commentary Mechanism is embedded; it monitors the AIs and generate comment scripts based on actions of the AIs and situation in the game. Comments to be spoken are exported as files, called "scripts."
