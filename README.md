@@ -29,4 +29,13 @@ Descriptions are given on a design to make an existing fighting game become an e
 Experimental results show that the proposed system promotes audience experience.
 
 [Website about This paper](https://thanatteay.github.io/AllAPGsTJ/public/index.html)
-[Bootstrap](https://getbootstrap.com)
+
+
+<!-- Software tools -->
+## Software tools
+### AI_gBEAI
+
+### P-TwitchCapture
+
+### Text to Speech APG
+A program for generating speech in a rap style. It receives scripts from the previous component, and determine which one to be used considering two things. First is whether there are some new messages embedding commands from audiences. Second is $HP$s of the two AI; it will focus on the AI that is dominating the game (i.e., has a higher HP). Speeches are rapped based on a given rhythm given in a file called  "Rap Flow." Speeches from Rap Synthesizer was streamed with FightingICE as one game system (they are actually two seperated applications since Rap Synthesizer is designed to be capable of working with other games as well).
