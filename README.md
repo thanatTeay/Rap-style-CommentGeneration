@@ -9,13 +9,13 @@
     <li>
       <a href="#Software-tools">Software tools</a>
       <ul>
-        <li><a href="#AI-gBEAI">AI_gBEAI</a></li>
+        <li><a href="#AI_gBEAI">AI_gBEAI</a></li>
       </ul>
      <ul>
-        <li><a href="#P-Twitch-capture">P-TwitchCapture</a></li>
+        <li><a href="#P-TwitchCapture">P-TwitchCapture</a></li>
       </ul>
      <ul>
-        <li><a href="#Text-to-speech">Text to Speech APG</a></li>
+        <li><a href="#text-to-speech-apg">Text to Speech APG</a></li>
       </ul>
     </li>
   </ol>
