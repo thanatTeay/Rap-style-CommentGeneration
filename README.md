@@ -33,11 +33,15 @@ Experimental results show that the proposed system promotes audience experience.
 
 <!-- Software tools -->
 ## Software tools
+This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+*Visual studio
+*Eclipse
+
 ### AI_gBEAI
 FightingICE is the game in use for streaming. To use it as an APG, two gBEAIs are used; they receive **F**s from the previous component. A Commentary Mechanism is embedded; it monitors the AIs and generate comment scripts based on actions of the AIs and situation in the game. Comments to be spoken are exported as files, called "scripts."
 
 ### P-TwitchCapture
-
+A program that connects to the Twitch channel to constantly pull messages from audiences from the Twitch server. Messages are analyzed, commands embedded in messages are extracted and processed, and then Social Facilitation parameters (denoted as $F$s) will be calculated and sent to AIs in FightingICE. In addition, Twitch Message Capturer also bypasses messages to Rap Synthesizer to inform it whether there is a new message.
 
 ### Text to Speech APG
 A program for generating speech in a rap style. It receives scripts from the previous component, and determine which one to be used considering two things. First is whether there are some new messages embedding commands from audiences. Second is $HP$s of the two AI; it will focus on the AI that is dominating the game (i.e., has a higher HP). Speeches are rapped based on a given rhythm given in a file called  "Rap Flow." Speeches from Rap Synthesizer was streamed with FightingICE as one game system (they are actually two seperated applications since Rap Synthesizer is designed to be capable of working with other games as well).
