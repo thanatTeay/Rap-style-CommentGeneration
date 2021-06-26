@@ -51,4 +51,4 @@ A program for generating speech in a rap style. It receives scripts from the pre
 
 <!-- Overview -->
 ## Overview
-![alt text](https://ibb.co/DgCP6d4)
+![alt text](https://drive.google.com/file/d/1Cm0WxP83pK0OcjPKk6X4J3n0bJgdg9sM/view?usp=sharing)
