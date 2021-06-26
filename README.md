@@ -18,6 +18,9 @@
         <li><a href="#text-to-speech-apg">Text to Speech APG</a></li>
       </ul>
     </li>
+   <li>
+      <a href="#Overview">Overview</a>
+    </li>
   </ol>
 </details>
 
@@ -45,3 +48,7 @@ A program that connects to the Twitch channel to constantly pull messages from a
 
 ### Text to Speech APG
 A program for generating speech in a rap style. It receives scripts from the previous component, and determine which one to be used considering two things. First is whether there are some new messages embedding commands from audiences. Second is $HP$s of the two AI; it will focus on the AI that is dominating the game (i.e., has a higher HP). Speeches are rapped based on a given rhythm given in a file called  "Rap Flow." Speeches from Rap Synthesizer was streamed with FightingICE as one game system (they are actually two seperated applications since Rap Synthesizer is designed to be capable of working with other games as well).
+
+
+##Overview
+[![Product Name Screen Shot][product-screenshot]](https://ibb.co/DgCP6d4)
