@@ -31,7 +31,7 @@ This paper presents a rap-style commentary system for enhancing Audience Partici
 Descriptions are given on a design to make an existing fighting game become an entertaining APG through the process of AI strength adjustment based on chat messages from audiences, and on how to apply such strength adjustment to generate game commentaries. 
 Experimental results show that the proposed system promotes audience experience.
 * [About paper](https://drive.google.com/file/d/12k-n1bgWC0EGf1tEZEtIW5mb-Pv1EHpB/view?usp=sharing)
-* [Website about This paper](https://thanatteay.github.io/Rap-style_CommentGeneration/public/index.html)
+* [Website about This paper](https://thanatteay.github.io/Rap-style-CommentGeneration/public/index.html)
 
 
 <!-- Software tools -->
